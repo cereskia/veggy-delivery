@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "Veggy Delivery — Türkiye'nin İlk Vegan Coffee Shop'u. Tamamı bitkisel. Günlük üretim ile taptaze menü." } = Astro.props;
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#7e0a0a" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/assets/brand-mark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="loader" aria-hidden="true">
+      <img src="/assets/brand-mark.png" alt="" class="loader-logo" width="152" height="152" />
+      <div class="loader-bar"><span></span></div>
+      <p class="loader-text">loading vegan delights<span class="loader-dots" aria-hidden="true"></span></p>
+    </div>
+    <slot />
+    <script>
+      function hideLoader() {
+        document.getElementById('loader')?.classList.add('done');
+      }
+      window.addEventListener('load', () => setTimeout(hideLoader, 900));
+      setTimeout(hideLoader, 3500);
+    </script>
+  </body>
+</html>

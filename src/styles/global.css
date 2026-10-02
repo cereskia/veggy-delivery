@@ -1,0 +1,119 @@
+/* Fiorina Text lisanslı bir fonttur. Lisans dosyanız varsa
+   public/fonts/ klasörüne koyup aşağıdaki @font-face bloğunu aktif edin:
+   @font-face{
+     font-family:"Fiorina Text";
+     src:url("/fonts/fiorina-text-regular.woff2") format("woff2");
+     font-weight:400; font-style:normal; font-display:swap;
+   }
+*/
+:root{
+  --veggy:#7e0a0a;
+  --veggy-dark:#5c0707;
+  --veggy-light:#a31a1a;
+  --cream:#fffaf3;
+  --card:#ffffff;
+  --ink:#1c1a1a;
+  --muted:#7a6f6a;
+  --line:#f0e2d6;
+  --green:#3d7a44;
+  --radius:18px;
+  --font-display:"Fiorina Text","Bodoni Moda","Playfair Display",Georgia,"Times New Roman",serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--cream);
+  color:var(--ink);
+  overflow-x:clip;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+img{max-width:100%;height:auto}
+/* --- Açılış yükleme ekranı --- */
+#loader{position:fixed;inset:0;z-index:100;background:var(--veggy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;overflow:hidden;isolation:isolate;transition:opacity .5s ease,visibility .5s}
+#loader.done{opacity:0;visibility:hidden}
+#loader::before,#loader::after{content:"";position:absolute;z-index:0;border-radius:50%;filter:blur(70px);pointer-events:none}
+#loader::before{width:480px;height:480px;left:-140px;top:-160px;background:radial-gradient(circle,#e4695f 0%,transparent 70%);opacity:.65}
+#loader::after{width:520px;height:520px;right:-160px;bottom:-220px;background:radial-gradient(circle,#3d0505 0%,transparent 70%);opacity:.8}
+#loader > *{position:relative;z-index:1}
+.loader-logo{width:152px;height:152px;object-fit:contain;animation:loaderPulse 1.6s ease-in-out infinite}
+@keyframes loaderPulse{0%,100%{transform:translateX(-9px) scale(1);opacity:.85}50%{transform:translateX(-9px) scale(1.07);opacity:1}}
+.loader-bar{width:160px;height:2px;background:rgba(255,255,255,.22);border-radius:2px;overflow:hidden}
+.loader-bar span{display:block;height:100%;width:40%;background:#fff;border-radius:2px;animation:loaderSlide 1.2s ease-in-out infinite}
+@keyframes loaderSlide{0%{transform:translateX(-110%)}100%{transform:translateX(360%)}}
+.loader-text{margin:0;font-family:var(--font-display);font-style:italic;font-weight:400;font-size:11px;letter-spacing:.08em;color:#fff;opacity:.9;animation:loaderText 2s ease-in-out infinite}
+@keyframes loaderText{0%,100%{opacity:.55}50%{opacity:1}}
+.loader-dots::after{content:"";animation:loaderDots 1.2s steps(1) infinite}
+@keyframes loaderDots{0%{content:""}25%{content:"."}50%{content:".."}75%,100%{content:"..."}}
+/* --- Animasyonlar --- */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-inner > *{animation:rise .7s ease both}
+.hero-inner > *:nth-child(2){animation-delay:.1s}
+.hero-inner > *:nth-child(3){animation-delay:.2s}
+.hero-inner > *:nth-child(4){animation-delay:.3s}
+html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+html.js .reveal.visible{opacity:1;transform:none}
+.btn,.lang-switch button{transition:transform .15s ease,background-color .2s ease,color .2s ease}
+.btn:active{transform:scale(.97)}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+.topbar{position:sticky;top:0;z-index:10;background:var(--veggy);color:#fff}
+.scroll-progress{height:4px;background:rgba(255,255,255,.22)}
+.scroll-progress span{display:block;height:100%;width:0;background:#ff3b30;border-radius:0 3px 3px 0;box-shadow:0 0 8px rgba(255,59,48,.9)}
+.topbar-inner{display:flex;align-items:center;gap:12px;padding:10px 18px;min-height:64px}
+.mark{width:44px;height:44px;object-fit:contain;background:transparent;border-radius:0;flex-shrink:0}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;min-width:0}
+.brand-text strong{font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:.2px;white-space:nowrap}
+.lang-switch{margin-left:auto;display:flex;background:rgba(255,255,255,.18);border-radius:999px;padding:3px;flex-shrink:0}
+.lang-switch button{border:0;background:transparent;color:#fff;padding:10px 14px;min-height:44px;border-radius:999px;font-weight:700;font-size:14px;font-family:inherit;cursor:pointer}
+.lang-switch button.active{background:#fff;color:var(--veggy)}
+.hero{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(600px 300px at 50% -60px, #c73737 0%, var(--veggy) 55%, var(--veggy-dark) 100%);color:#fff;text-align:center;padding:34px 0 28px}
+.hero::before,.hero::after{content:"";position:absolute;z-index:0;border-radius:50%;filter:blur(70px);pointer-events:none}
+.hero::before{width:480px;height:480px;left:-140px;top:-160px;background:radial-gradient(circle,#e4695f 0%,transparent 70%);opacity:.65}
+.hero::after{width:520px;height:520px;right:-160px;bottom:-220px;background:radial-gradient(circle,#3d0505 0%,transparent 70%);opacity:.8}
+.hero-inner{position:relative;z-index:1}
+.hero-logo{width:min(320px,78vw);background:transparent;border-radius:0;padding:0;filter:brightness(0) invert(1) drop-shadow(0 2px 14px rgba(0,0,0,.4))}
+.hero h1{font-family:var(--font-display);font-size:clamp(26px,6.5vw,36px);margin:18px 0 8px;letter-spacing:0;line-height:1.2;font-weight:700;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.hero p{opacity:1;margin:0 auto 18px;max-width:34em;font-size:clamp(15px,4vw,17px);line-height:1.6;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;min-height:48px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px}
+.btn.primary{background:#fff;color:var(--veggy)}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.7);color:#fff}
+.category{margin:26px 0;scroll-margin-top:76px}
+.category h2{font-family:var(--font-display);font-size:clamp(22px,5.6vw,26px);margin:0 0 2px;color:var(--veggy);font-weight:700}
+.category .count{font-size:13px;color:var(--muted)}
+.item{padding:13px 2px;border-bottom:1px solid var(--line)}
+.category .item:last-child{border-bottom:0}
+.item-top{display:flex;align-items:baseline;gap:10px}
+.item h3{margin:0;font-size:17px;font-weight:700;overflow-wrap:break-word}
+.dots{flex:1;min-width:24px;border-bottom:2px dotted #d9c7b4;transform:translateY(-4px)}
+.item p{margin:4px 0 0;color:#5f5550;font-size:15px;line-height:1.55;overflow-wrap:break-word}
+.price{font-family:var(--font-display);font-weight:700;color:var(--veggy);white-space:nowrap;font-size:17px}
+footer{background:var(--veggy);color:#fff;margin-top:34px;padding:22px 0 calc(22px + env(safe-area-inset-bottom))}
+.footer-inner{display:flex;gap:14px;align-items:center}
+.footer-inner > div{min-width:0}
+.footer-inner p{margin:6px 0;overflow-wrap:break-word}
+.foot-brand{font-family:var(--font-display);font-size:24px;font-weight:700;letter-spacing:.2px}
+.foot-mark{width:52px;height:52px;object-fit:contain;background:transparent;border-radius:0;flex-shrink:0}
+footer a{color:#fff}
+
+@media (max-width:480px){
+  .wrap{padding:0 14px}
+  .topbar-inner{padding:8px 14px;gap:10px}
+  .mark{width:38px;height:38px}
+  .brand-text strong{font-size:17px}
+  .lang-switch button{padding:10px 12px}
+  .hero{padding:28px 0 24px}
+  .category{scroll-margin-top:70px}
+  .item h3{font-size:16px}
+  .btn{flex:1 1 100%;max-width:320px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-inner > *{animation:none}
+  .loader-logo,.loader-bar span,.loader-text,.loader-dots::after{animation:none}
+  html.js .reveal{opacity:1;transform:none;transition:none}
+}

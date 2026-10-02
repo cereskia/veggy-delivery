@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MenuCard from '../components/MenuCard.astro';
+import menu from '../data/menu.json';
+
+const restaurant = menu.restaurant;
+const catsTr = menu.categories_tr;
+const catsEn = menu.categories_en;
+---
+
+<Layout title="Veggy Delivery — Türkiye'nin İlk Vegan Coffee Shop'u">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <img src="/assets/brand-mark.png" alt="Veggy" class="mark" width="44" height="44" />
+      <div class="brand-text">
+        <strong>veggy delivery</strong>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Dil / Language">
+        <button data-lang="tr" class="active">TR</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <img src="/assets/logo.png" alt="Veggy Delivery logo" class="hero-logo" width="300" />
+      <h1 data-tr="Türkiye'nin İlk Vegan Coffee Shop'u" data-en="Turkey's First Vegan Coffee Shop">
+        Türkiye'nin İlk Vegan Coffee Shop'u
+      </h1>
+      <p
+        data-tr="Tamamı bitkisel. Kahve, tatlı ve günlük lezzetler. Günlük üretim ile taptaze menü."
+        data-en="Fully plant-based. Coffee, desserts and daily treats. Fresh menu, produced daily."
+      >
+        Tamamı bitkisel. Kahve, tatlı ve günlük lezzetler. Günlük üretim ile taptaze menü.
+      </p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn primary" data-tr="Menüyü Gör" data-en="View Menu">Menüyü Gör</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap" id="menu">
+
+    <!-- TR menu (SSR, SEO-friendly) -->
+    <div id="menu-tr">
+      {
+        catsTr.map((cat) => (
+          <section class="category reveal" id={`cat-${cat.id}`}>
+            <h2>{cat.name}</h2>
+            <div class="count">
+              {cat.items.length} ürün
+            </div>
+            {cat.items.map((item) => (
+              <MenuCard name={item.name} description={item.description} price={item.price} />
+            ))}
+          </section>
+        ))
+      }
+    </div>
+
+    <!-- EN menu -->
+    <div id="menu-en" hidden>
+      {
+        catsEn.map((cat) => (
+          <section class="category reveal" id={`cat-en-${cat.id}`}>
+            <h2>{cat.name}</h2>
+            <div class="count">
+              {cat.items.length} items
+            </div>
+            {cat.items.map((item) => (
+              <MenuCard name={item.name} description={item.description} price={item.price} />
+            ))}
+          </section>
+        ))
+      }
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <img src="/assets/brand-mark.png" alt="" class="foot-mark" width="52" height="52" />
+      <div>
+        <strong class="foot-brand">veggy delivery</strong>
+        <p>
+          {[restaurant.address, restaurant.workingHours].filter(Boolean).join(' • ') ||
+            'Ankara • Türkiye'}
+        </p>
+        {restaurant.instagram && (
+          <p>
+            <a href={restaurant.instagram} target="_blank" rel="noopener">@veggydelivery</a>
+          </p>
+        )}
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+    const btns = document.querySelectorAll('.lang-switch button');
+    const menuTr = document.getElementById('menu-tr');
+    const menuEn = document.getElementById('menu-en');
+
+    function setLang(lang) {
+      const isTr = lang === 'tr';
+      document.documentElement.lang = lang;
+      if (menuTr) menuTr.hidden = !isTr;
+      if (menuEn) menuEn.hidden = isTr;
+      btns.forEach((b) => b.classList.toggle('active', b.dataset.lang === lang));
+      document.querySelectorAll('[data-tr]').forEach((el) => {
+        const tr = el.getAttribute('data-tr');
+        const en = el.getAttribute('data-en');
+        if (tr) el.textContent = isTr ? tr : (en ?? tr);
+      });
+    }
+
+    btns.forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+    // Scroll-reveal: bölümler ekrana girince yumuşakça belirir
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    // Tepedeki barın altında ilerleyen kaydırma çubuğu
+    const bar = document.getElementById('scrollProgress');
+    let ticking = false;
+    function updateBar() {
+      ticking = false;
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      if (bar) bar.style.width = p + '%';
+    }
+    addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateBar);
+      }
+    }, { passive: true });
+    addEventListener('resize', updateBar);
+    updateBar();
+  </script>
+</Layout>

@@ -1,0 +1,443 @@
+{
+  "restaurant": {
+    "name": "Veggy Delivery",
+    "tagline_tr": "Türkiye'nin İlk Vegan Coffee Shop'u",
+    "tagline_en": "Turkey's First Vegan Coffee Shop",
+    "phone": "",
+    "instagram": "https://instagram.com/veggydelivery",
+    "address": "Ankara • Türkiye",
+    "workingHours": ""
+  },
+  "categories_tr": [
+    {
+      "id": "sicak-icecekler",
+      "name": "Sıcak İçecekler",
+      "items": [
+        {
+          "name": "Filtre Kahve",
+          "description": "Sıcak servis",
+          "price": "170 ₺"
+        },
+        {
+          "name": "Americano",
+          "description": "Sıcak servis",
+          "price": "160 ₺"
+        },
+        {
+          "name": "Latte",
+          "description": "Bitkisel sütlü, sıcak",
+          "price": "185 ₺"
+        },
+        {
+          "name": "Cappuccino",
+          "description": "Bitkisel sütlü, sıcak",
+          "price": "185 ₺"
+        },
+        {
+          "name": "Caramel Macchiato",
+          "description": "Bitkisel sütlü, sıcak",
+          "price": "200 ₺"
+        },
+        {
+          "name": "Mocha",
+          "description": "Bitkisel sütlü, çikolatalı, sıcak",
+          "price": "225 ₺"
+        }
+      ]
+    },
+    {
+      "id": "soguk-icecekler",
+      "name": "Soğuk İçecekler",
+      "items": [
+        {
+          "name": "Filtre Kahve",
+          "description": "Soğuk servis",
+          "price": "175 ₺"
+        },
+        {
+          "name": "Americano",
+          "description": "Soğuk servis",
+          "price": "165 ₺"
+        },
+        {
+          "name": "Latte",
+          "description": "Bitkisel sütlü, soğuk",
+          "price": "190 ₺"
+        },
+        {
+          "name": "Cappuccino",
+          "description": "Bitkisel sütlü, soğuk",
+          "price": "190 ₺"
+        },
+        {
+          "name": "Caramel Macchiato",
+          "description": "Bitkisel sütlü, soğuk",
+          "price": "205 ₺"
+        },
+        {
+          "name": "Mocha",
+          "description": "Bitkisel sütlü, çikolatalı, soğuk",
+          "price": "230 ₺"
+        },
+        {
+          "name": "Berry Ice Tea",
+          "description": "Orman meyveli buzlu çay",
+          "price": "190 ₺"
+        },
+        {
+          "name": "Ev Yapımı Limonata",
+          "description": "Günlük taze",
+          "price": "175 ₺"
+        },
+        {
+          "name": "Taze Sıkım Portakal Suyu",
+          "description": "%100 taze portakal",
+          "price": "180 ₺"
+        }
+      ]
+    },
+    {
+      "id": "tatlilar",
+      "name": "Tatlılar",
+      "items": [
+        {
+          "name": "Mozaik Kek",
+          "price": "200 ₺",
+          "description": "Kakao ve bisküvili klasik lezzet"
+        },
+        {
+          "name": "Salted Caramel Tart",
+          "price": "300 ₺",
+          "description": "Deniz tuzlu karamel, kıyır tart tabanında"
+        },
+        {
+          "name": "Lotus Pasta",
+          "price": "285 ₺",
+          "description": "Karamelize bisküvi kremalı"
+        },
+        {
+          "name": "Orman Meyveli Pasta",
+          "price": "275 ₺",
+          "description": "Karışık orman meyveli, hafif krema"
+        },
+        {
+          "name": "Çikolatalı Yaş Pasta",
+          "price": "270 ₺",
+          "description": "Yoğun çikolatalı, yumuşacık kek"
+        },
+        {
+          "name": "Limonlu Haşhaşlı Pasta",
+          "price": "250 ₺",
+          "description": "Ferahlatıcı limon ve haşhaş tohumu"
+        },
+        {
+          "name": "Vişneli Brownie",
+          "price": "295 ₺",
+          "description": "Ekşi vişne ve yoğun çikolata"
+        },
+        {
+          "name": "Pink Freud",
+          "price": "225 ₺",
+          "description": "Veggy'nin imza tatlısı"
+        },
+        {
+          "name": "Family Portrait",
+          "price": "220 ₺",
+          "description": "Veggy'nin imza tatlısı"
+        },
+        {
+          "name": "San Sebastian",
+          "price": "280 ₺",
+          "description": "Akışkan kıvamlı, karamelize üst"
+        },
+        {
+          "name": "Beyaz Çikolatalı Pasta",
+          "price": "275 ₺",
+          "description": "Beyaz çikolata kremalı"
+        },
+        {
+          "name": "Vegan Tiramisu",
+          "price": "240 ₺",
+          "description": "Kahveli, bitkisel mascarpone ile klasik lezzet"
+        },
+        {
+          "name": "Ispanaklı Köstebek Pasta",
+          "price": "230 ₺",
+          "description": "Ispanaklı kek, muz ve hafif krema"
+        }
+      ]
+    },
+    {
+      "id": "tuzlular",
+      "name": "Tuzlular",
+      "items": [
+        {
+          "name": "Vegan Gourmet Tost",
+          "description": "Fermente kaju peyniri, vegan sucuk, tofu, domates",
+          "price": "350 ₺"
+        },
+        {
+          "name": "Vegan Classic Tost",
+          "description": "Humus, zeytin ezmesi, tofu, domates",
+          "price": "300 ₺"
+        },
+        {
+          "name": "Vegan Rafine Tost",
+          "description": "Salça, vegan cheddar peyniri, vegan sucuk, tofu",
+          "price": "300 ₺"
+        },
+        {
+          "name": "Üç Peynirli Sandviç",
+          "price": "300 ₺",
+          "description": "Üç çeşit bitkisel peynir ile"
+        },
+        {
+          "name": "Fishless Sandviç",
+          "description": "%100 vegan, balık alternatifi",
+          "price": "275 ₺"
+        },
+        {
+          "name": "Focaccia",
+          "price": "240 ₺",
+          "description": "Zeytinyağlı, kekikli İtalyan ekmeği"
+        },
+        {
+          "name": "Ispanaklı Peynirli Börek",
+          "price": "200 ₺",
+          "description": "Ispanak ve bitkisel peynirli, çıtır yufka"
+        },
+        {
+          "name": "Kıymalı Patlıcanlı Börek",
+          "price": "225 ₺",
+          "description": "Bitkisel kıyma ve köz patlıcanlı"
+        },
+        {
+          "name": "Zeytinli Poğaça",
+          "price": "60 ₺",
+          "description": "Zeytinli, yumuşacık günlük poğaça"
+        },
+        {
+          "name": "Peynirli Poğaça",
+          "price": "65 ₺",
+          "description": "Bitkisel peynirli, günlük poğaça"
+        }
+      ]
+    }
+  ],
+  "categories_en": [
+    {
+      "id": "hot-drinks",
+      "name": "Hot Drinks",
+      "items": [
+        {
+          "name": "Filter Coffee",
+          "description": "Served hot",
+          "price": "170 ₺"
+        },
+        {
+          "name": "Americano",
+          "description": "Served hot",
+          "price": "160 ₺"
+        },
+        {
+          "name": "Latte",
+          "description": "With plant milk, hot",
+          "price": "185 ₺"
+        },
+        {
+          "name": "Cappuccino",
+          "description": "With plant milk, hot",
+          "price": "185 ₺"
+        },
+        {
+          "name": "Caramel Macchiato",
+          "description": "With plant milk, hot",
+          "price": "200 ₺"
+        },
+        {
+          "name": "Mocha",
+          "description": "With plant milk and chocolate, hot",
+          "price": "225 ₺"
+        }
+      ]
+    },
+    {
+      "id": "iced-drinks",
+      "name": "Iced Drinks",
+      "items": [
+        {
+          "name": "Filter Coffee",
+          "description": "Served iced",
+          "price": "175 ₺"
+        },
+        {
+          "name": "Americano",
+          "description": "Served iced",
+          "price": "165 ₺"
+        },
+        {
+          "name": "Latte",
+          "description": "With plant milk, iced",
+          "price": "190 ₺"
+        },
+        {
+          "name": "Cappuccino",
+          "description": "With plant milk, iced",
+          "price": "190 ₺"
+        },
+        {
+          "name": "Caramel Macchiato",
+          "description": "With plant milk, iced",
+          "price": "205 ₺"
+        },
+        {
+          "name": "Mocha",
+          "description": "With plant milk and chocolate, iced",
+          "price": "230 ₺"
+        },
+        {
+          "name": "Berry Ice Tea",
+          "description": "Wild berry iced tea",
+          "price": "190 ₺"
+        },
+        {
+          "name": "Homemade Lemonade",
+          "description": "Fresh daily",
+          "price": "175 ₺"
+        },
+        {
+          "name": "Fresh Orange Juice",
+          "description": "100% fresh oranges",
+          "price": "180 ₺"
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Mosaic Cake",
+          "price": "200 ₺",
+          "description": "Cocoa and biscuit classic"
+        },
+        {
+          "name": "Salted Caramel Tart",
+          "price": "300 ₺",
+          "description": "Sea-salt caramel on a crisp tart base"
+        },
+        {
+          "name": "Lotus Cake",
+          "price": "285 ₺",
+          "description": "With caramelized biscuit cream"
+        },
+        {
+          "name": "Wild Berry Cake",
+          "price": "275 ₺",
+          "description": "Mixed wild berries with light cream"
+        },
+        {
+          "name": "Chocolate Layer Cake",
+          "price": "270 ₺",
+          "description": "Rich chocolate, soft sponge"
+        },
+        {
+          "name": "Lemon Poppy Seed Cake",
+          "price": "250 ₺",
+          "description": "Refreshing lemon and poppy seed"
+        },
+        {
+          "name": "Sour Cherry Brownie",
+          "price": "295 ₺",
+          "description": "Sour cherry and intense chocolate"
+        },
+        {
+          "name": "Pink Freud",
+          "price": "225 ₺",
+          "description": "A Veggy signature dessert"
+        },
+        {
+          "name": "Family Portrait",
+          "price": "220 ₺",
+          "description": "A Veggy signature dessert"
+        },
+        {
+          "name": "San Sebastian",
+          "price": "280 ₺",
+          "description": "Creamy center with caramelized top"
+        },
+        {
+          "name": "White Chocolate Cake",
+          "price": "275 ₺",
+          "description": "With white chocolate cream"
+        },
+        {
+          "name": "Vegan Tiramisu",
+          "price": "240 ₺",
+          "description": "Coffee-soaked classic with plant mascarpone"
+        },
+        {
+          "name": "Spinach Mole Cake",
+          "price": "230 ₺",
+          "description": "Spinach sponge with banana and light cream"
+        }
+      ]
+    },
+    {
+      "id": "savory",
+      "name": "Savory",
+      "items": [
+        {
+          "name": "Vegan Gourmet Toast",
+          "description": "Fermented cashew cheese, vegan sucuk, tofu, tomato",
+          "price": "350 ₺"
+        },
+        {
+          "name": "Vegan Classic Toast",
+          "description": "Hummus, olive paste, tofu, tomato",
+          "price": "300 ₺"
+        },
+        {
+          "name": "Vegan Rafine Toast",
+          "description": "Tomato paste, vegan cheddar, vegan sucuk, tofu",
+          "price": "300 ₺"
+        },
+        {
+          "name": "Three-Cheese Sandwich",
+          "price": "300 ₺",
+          "description": "With three kinds of plant cheese"
+        },
+        {
+          "name": "Fishless Sandwich",
+          "description": "100% vegan fish alternative",
+          "price": "275 ₺"
+        },
+        {
+          "name": "Focaccia",
+          "price": "240 ₺",
+          "description": "Italian bread with olive oil and oregano"
+        },
+        {
+          "name": "Spinach & Cheese Börek",
+          "price": "200 ₺",
+          "description": "Spinach and plant cheese in crisp phyllo"
+        },
+        {
+          "name": "Minced & Eggplant Börek",
+          "price": "225 ₺",
+          "description": "Plant mince and smoked eggplant"
+        },
+        {
+          "name": "Olive Pogaca",
+          "price": "60 ₺",
+          "description": "Soft daily pogaca with olives"
+        },
+        {
+          "name": "Cheese Pogaca",
+          "price": "65 ₺",
+          "description": "Daily pogaca with plant cheese"
+        }
+      ]
+    }
+  ]
+}
